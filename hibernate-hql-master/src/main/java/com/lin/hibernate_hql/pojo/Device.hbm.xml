@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-9-30 11:22:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.lin.hibernate_hql.pojo.Device" table="patrol_point_device">
+        <id name="Id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="uuid" />
+        </id>
+        <property name="deviceId" type="java.lang.String">
+            <column name="DEVICEID" />
+        </property>
+        <property name="deviceNo" type="java.lang.String">
+            <column name="DEVICENO" />
+        </property>
+        <property name="deviceName" type="java.lang.String">
+            <column name="DEVICENAME" />
+        </property>
+        <property name="cid" type="java.lang.String">
+            <column name="CID" />
+        </property>
+        <property name="cName" type="java.lang.String" access="field">
+            <column name="CNAME" />
+        </property>
+        <property name="longitude" type="java.lang.String">
+            <column name="LONGITUDE" />
+        </property>
+        <property name="latitude" type="java.lang.String">
+            <column name="LATITUDE" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" />
+        </property>
+        <property name="pointId" type="java.lang.String">
+            <column name="POINTID" />
+        </property>
+<!--         <cache usage="read-write"/> -->
+    </class>
+</hibernate-mapping>

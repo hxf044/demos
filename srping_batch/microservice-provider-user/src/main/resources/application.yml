@@ -1,0 +1,32 @@
+server:
+  port: 7900
+spring:
+  datasource:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:mysql://39.106.71.98:3306/hxf_cloud?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=CTT
+      username: hxf_cloud
+      password: hxf_cloud
+      driver-class-name: com.mysql.jdbc.Driver
+  h2:
+      console:
+          enabled: false
+  jpa:
+#      database-platform: org.hibernate.dialect.MySQL57Dialect
+      generate-ddl: false
+      database: mysql
+      show-sql: true
+      properties:
+          hibernate.id.new_generator_mappings: true
+          hibernate.cache.use_second_level_cache: false
+          hibernate.cache.use_query_cache: false
+          hibernate.generate_statistics: true
+          hibernate.hbm2ddl.auto: update
+logging:
+  level:
+    root: INFO
+    com.itmuch.cloud.hxfitmuchcloudprovideruser: DEBUG
+#    显示sql语句以及参数
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.itmuch: DEBUG

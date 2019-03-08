@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-9-30 11:22:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.lin.hibernate_hql.pojo.Point" table="patrol_point">
+        <id name="pointId" type="java.lang.String">
+            <column name="pointId" />
+            <generator class="uuid"  />
+        </id>
+        <property name="pointNo" type="java.lang.String">
+            <column name="pointNo" />
+        </property>
+        <property name="isDeleted" type="java.lang.Integer">
+            <column name="isDeleted" />
+        </property>
+        <property name="pointName" type="java.lang.String">
+            <column name="pointName" />
+        </property>
+        <property name="longitude" type="java.lang.String">
+            <column name="longitude" />
+        </property>
+        <property name="latitude" type="java.lang.String">
+            <column name="latitude" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="address" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="remark" />
+        </property>
+		
+		<set name="devices" table="patrol_point_device" lazy="true" inverse="true" fetch="join">
+<!-- 			<cache usage="read-write"/> -->
+				<key column="pointId"></key>
+			<one-to-many class="com.lin.hibernate_hql.pojo.Device" ></one-to-many>
+		</set>     
+<!-- 		<cache usage="read-write"/> -->
+    </class>
+</hibernate-mapping>
